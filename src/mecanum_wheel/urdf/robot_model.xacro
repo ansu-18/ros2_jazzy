@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="four_wheel_mecanum_robot">
-  <xacro:property name="pi" value="3.141592653589793"/>
+  <xacro:property name="PI" value="3.141592653589793"/>
 
   <!-- Dimensions supplied by user. Units are meters and kilograms. -->
   <xacro:property name="base_length" value="0.35"/>
