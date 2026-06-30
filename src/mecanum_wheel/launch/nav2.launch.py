@@ -16,18 +16,32 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
 
     return LaunchDescription([
-        DeclareLaunchArgument("use_sim_time", default_value="true"),
+        DeclareLaunchArgument(
+            "use_sim_time",
+            default_value="true"
+        ),
+
         DeclareLaunchArgument(
             "params_file",
-            default_value=os.path.join(pkg_share, "config", "nav2_params.yaml"),
+            default_value=os.path.join(
+                pkg_share,
+                "config",
+                "nav2_params.yaml"
+            ),
         ),
+
         DeclareLaunchArgument(
             "map",
-            default_value=os.path.join(pkg_share, "maps", "empty_map.yaml"),
+            default_value="/home/dibya/ros2_jazzy/src/mecanum_wheel/maps/empty_map.yaml",
         ),
+
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                os.path.join(nav2_share, "launch", "bringup_launch.py")
+                os.path.join(
+                    nav2_share,
+                    "launch",
+                    "bringup_launch.py"
+                )
             ),
             launch_arguments={
                 "use_sim_time": use_sim_time,
